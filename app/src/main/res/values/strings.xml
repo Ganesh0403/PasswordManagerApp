@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Password Manager</string>
+    <string name="action_settings">Search</string>
+    <string name="name">New Password</string>
+    <string name="title">Enter title</string>
+    <string name="pass">Enter password to be saved</string>
+    <string name="app_pass">Enter application password</string>
+    <string name="button_save">SAVE</string>
+    <string name="add_password">Add Password</string>
+    <string name="update_text">Show</string>
+    <string name="edit_item">Show Password</string>
+    <string name="yes_text">YES</string>
+    <string name="no_text">NO</string>
+    <string name="sure_text">Are You Sure?</string>
+</resources>
