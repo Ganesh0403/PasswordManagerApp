@@ -1,5 +1,5 @@
 # Password Manager App
-This App is basically used to store various passwords.To store password it uses encryption algorithm.
+This App is basically used to store various passwords. Encryption algorithm is designed to store your password safely.
 
 App is designed by Ganesh Shinde(https://github.com/Ganesh0403).
 
