@@ -11,13 +11,13 @@ Password can be retrived by using same key.
 <b>Screenshots:-</b>
 
 Logo:
-![Logo](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/Logo.jpeg?raw=true)
+![Logo](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/Logo.jpeg)
 
 Add New Password:
-![New Password](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/New%20Password.jpeg?raw=true)
+![New Password](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/New%20Password.jpeg)
 
 Display List of Saved Password:
-![Password List](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/PasswordList.jpeg?raw=true)
+![Password List](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/PasswordList.jpeg)
 
 Show Password:
-![Show Password](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/ShowPassword.jpeg?raw=true)
+![Show Password](https://github.com/JitendraJoshi2000/PasswordManagerApp/blob/master/Screenshots/ShowPassword.jpeg)
