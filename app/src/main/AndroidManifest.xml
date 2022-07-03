@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.passwordmanager">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ganeshjitendra.passwordmanager">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
-        android:icon="@drawable/p"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListActivity"></activity>
+        <activity android:name="com.ganeshjitendra.passwordmanager.ListActivity"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.ganeshjitendra.passwordmanager.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,6 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+<!--        <provider-->
+<!--            android:authorities="${applicationId}.here.this.library.provider"-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true"-->
+<!--            tools:replace="android:authorities">-->
+<!--        </provider>-->
+
     </application>
 
 </manifest>

@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
                 android:layout_below="@+id/key_name"
-                android:background="@color/colorAccent"
+                android:background="@color/colorAccent2"
                 android:text="@string/button_save"/>
 
         </RelativeLayout>

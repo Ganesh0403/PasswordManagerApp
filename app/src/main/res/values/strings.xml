@@ -12,4 +12,7 @@
     <string name="yes_text">YES</string>
     <string name="no_text">NO</string>
     <string name="sure_text">Are You Sure?</string>
+    <string name="ex_in">Select Option?</string>
+    <string name="im_text">Import</string>
+    <string name="ex_text">Export</string>
 </resources>

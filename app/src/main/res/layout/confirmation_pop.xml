@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <RelativeLayout
-            android:padding="23dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="23dp">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
                 android:id="@+id/text_alert"
-                android:text="@string/sure_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:padding="6dp"
-                android:layout_centerHorizontal="true"/>
+                android:text="@string/sure_text"
+                android:textSize="18sp" />
+
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/yes_text"
-                android:background="@color/colorAccent"
-                android:layout_below="@+id/text_alert"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="40dp"
-                android:text="@string/yes_text"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/text_alert"
+                android:layout_marginTop="40dp"
+                android:background="@color/colorAccent2"
+                android:text="@string/yes_text"
+                android:textColor="@android:color/white" />
+
+            <Button
                 android:id="@+id/no_text"
-                android:background="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/text_alert"
                 android:layout_alignParentEnd="true"
-                android:textColor="@android:color/white"
                 android:layout_marginTop="40dp"
-                android:text="@string/no_text"/>
+                android:background="@color/colorAccent2"
+                android:text="@string/no_text"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

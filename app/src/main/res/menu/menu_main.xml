@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.passwordmanager.MainActivity">
+    tools:context="com.ganeshjitendra.passwordmanager.MainActivity">
     <item
         android:id="@+id/action_search"
         android:orderInCategory="100"
@@ -9,4 +9,11 @@
         android:title="@string/action_settings"
         app:showAsAction="always|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+    <item
+        android:id="@+id/action_export"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_import_export_24"
+        android:title="Import_Export"
+        app:showAsAction="always"
+        />
 </menu>
