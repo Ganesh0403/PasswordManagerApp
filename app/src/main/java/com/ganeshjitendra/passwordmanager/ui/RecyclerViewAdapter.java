@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -29,8 +30,9 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder> implements Filterable {
 
-    public static EditText keName;
+    public static EditText keName, keyN;
     public static TextView pName;
+    public static EditText passN;
     public Context context;
     public List<Item> itemList;
     private AlertDialog.Builder builder;
@@ -171,7 +173,7 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
 
             Button saveButton;
             TextView title;
-            final EditText keyN, passN, main;
+            final EditText main;
 
             saveButton = view.findViewById(R.id.save_button);
             keyN = view.findViewById(R.id.key_name);
@@ -180,7 +182,7 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
             title = view.findViewById(R.id.text_name);
 
             title.setText("Update Password");
-            saveButton.setText("Update");
+
             main.setText(item.getWebName());
 //            keyN.setText("");
 //            passN.setText("");
@@ -189,25 +191,34 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
             dialog = builder.create();
             dialog.show();
 
+            saveButton.setText("Show");
+
             saveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DataBaseHandler dataBaseHandler = new DataBaseHandler(context);
+                    if(!keyN.getText().toString().isEmpty()){
+                        EncDec.dec(item, 1);
+                        saveButton.setText("Update");
+                        saveButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                DataBaseHandler dataBaseHandler = new DataBaseHandler(context);
 
-                    if (!keyN.getText().toString().isEmpty() && !passN.getText().toString().isEmpty()){
-                        Snackbar.make(view,"Password Updated",Snackbar.LENGTH_LONG).show();
-                        EncDec.enc1(main.getText().toString(), passN.getText().toString(), keyN.getText().toString(), dataBaseHandler, item);
-                        notifyItemChanged(getAdapterPosition(),item);
-//                        System.out.println("He");
-                        dialog.dismiss();
+                                if (!keyN.getText().toString().isEmpty() && !passN.getText().toString().isEmpty()){
+                                    Toast.makeText(context, "Password Updated", Toast.LENGTH_LONG).show();
+                                    EncDec.enc1(main.getText().toString(), passN.getText().toString(), keyN.getText().toString(), dataBaseHandler, item);
+                                    notifyItemChanged(getAdapterPosition(),item);
+                                    dialog.dismiss();
+                                }else{
+                                    Snackbar.make(view,"Fields Empty",Snackbar.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                     }else{
-                        Snackbar.make(view,"Fields Empty",Snackbar.LENGTH_SHORT).show();
-//                        dialog.dismiss();
+                        Snackbar.make(v,"Empty Fields not Allowed",Snackbar.LENGTH_SHORT).show();
                     }
-//                    dialog.dismiss();
                 }
             });
-
         }
 
         private void editItem(Item item) {
@@ -240,7 +251,7 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
                 @Override
                 public void onClick(View v) {
                     if(!keName.getText().toString().isEmpty()){
-                        EncDec.dec(i);
+                        EncDec.dec(i, 0);
 //                        new Handler().postDelayed(new Runnable() {
 //                            @Override
 //                            public void run() {

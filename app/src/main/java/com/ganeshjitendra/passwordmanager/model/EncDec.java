@@ -10,6 +10,8 @@ import java.util.Random;
 
 import static com.ganeshjitendra.passwordmanager.ui.RecyclerViewAdapter.keName;
 import static com.ganeshjitendra.passwordmanager.ui.RecyclerViewAdapter.pName;
+import static com.ganeshjitendra.passwordmanager.ui.RecyclerViewAdapter.passN;
+import static com.ganeshjitendra.passwordmanager.ui.RecyclerViewAdapter.keyN;
 
 public class EncDec extends MainActivity {
 
@@ -92,7 +94,7 @@ public class EncDec extends MainActivity {
         MainActivity.dataBaseHandler.addItem(item);
         //sc.close();
     }
-    public static void dec(final Item item)
+    public static void dec(final Item item, int fl)
     {
         String txt;
         String key;
@@ -107,7 +109,11 @@ public class EncDec extends MainActivity {
 
         //System.out.print("Enter Password : ");
         //key=sc.nextLine();
-        key = keName.getText().toString().trim();
+        if (fl==0) {
+            key = keName.getText().toString().trim();
+        } else {
+            key = keyN.getText().toString().trim();
+        }
         txt = item.getPassword();
 
         char[] ch = new char[txt.length()];
@@ -159,7 +165,11 @@ public class EncDec extends MainActivity {
             inc += inc_factor;
         }
         String s = temp.toString();
-        pName.setText("Password : "+ s);
+        if (fl==1) {
+            passN.setText(s);
+        } else {
+            pName.setText("Password : " + s);
+        }
 
         //System.out.println("\nDecrypted text is : "+temp);
         //sc.close();
